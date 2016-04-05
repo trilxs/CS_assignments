@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
@@ -28,4 +29,7 @@ void delete_info(state *);
 void largest_population(int);
 void sorted_name(int);
 void sorted_population(int);
+bool is_int(int, char**);
+int get_num(int, char**, int, const char*);
+void start(ifstream*, int)
 int main(int, int**);
