@@ -1,22 +1,24 @@
 #include "state_facts.h"
 
-int main(int argc, int * argv[]) {
+int main(int argc, char * argv[]) {
     const char * state_compare = "-s"; const char * file_compare = "-f";
-    int state_pos = 1; int file_pos = 3;
-    int state_size; string file_name;
+    int state_size; char * file_name =  new char[256];
     ifstream f;
     if (argc == 5) {
-        state_size = get_num(argc, argv, state_pos, state_num);
-        if (argv[file_pos] = "-f") {
-            string file_name = argv[file_pos + 1];
-            f.open (file_name);
+        state_size = get_num(argc, argv, 1, state_compare);
+       // if (argv[3] == "-f") {
+            file_name = argv[4];
+            f.open (file_name); //TEMPORARY
             if (f.is_open()) {
-                start(&f, state_size);
+                start(f, state_size);
             }
-        }
-        else {
-            cout << "Error: Invalid arguments.\nFormat: -s # -f \"filename.txt\"\n";
-        }
+            else {
+                cout << "Failed to open file." << endl;
+            }
+      //  }
+      //  else {
+      //      cout << "Error: Invalid arguments.\nFormat: -s # -f \"filename.txt\"\n";
+      //  }
     }
     else {
         cout << "Error: Invalid amount of arguments.\n";
