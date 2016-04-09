@@ -10,7 +10,7 @@ int main(int argc, char * argv[]) {
             file_name = argv[4];
             f.open (file_name); //TEMPORARY
             if (f.is_open()) {
-                start(f, state_size);
+                start_program(f, state_size);
             }
             else {
                 cout << "Failed to open file." << endl;

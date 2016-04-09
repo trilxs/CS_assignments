@@ -23,16 +23,19 @@ struct state {
     int population;
 };
 /*
-state * create_states(int);
-void get_state_data(state *);
-void get_county_data(county *);
 void delete_info(state *);
-void largest_population(int);
 void sorted_name(int);
-void sorted_population(int);
 */
 bool is_int(int, char**);
 int get_num(int, char**, int, const char*);
-void start(ifstream&, int);
+void start_program(ifstream&, int);
 int main(int, char**);
-void create_counties(int, struct state*, ifstream&, struct county*, int, int&);
+state * create_states(int);
+county * create_counties(state *, int);
+void get_state_data (state *, ifstream&, int);
+void get_county_data(int, struct state*, ifstream&, struct county*, int, int&);
+void largest_population(state *, int);
+void sorted_population(state*, int);
+void sorted_name(state*, int);
+void income(state*, int);
+void house(state*, int);
