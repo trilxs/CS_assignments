@@ -1,3 +1,12 @@
+/******************************************************
+** Program: state_facts.cpp
+** Author: Tam Lu
+** Date: 04/07/2016
+** Description: list of prototypes and structs
+** Input: none
+** Output: none
+******************************************************/ 
+
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -22,10 +31,8 @@ struct state {
     int counties;
     int population;
 };
-/*
-void delete_info(state *);
-void sorted_name(int);
-*/
+
+void delete_info(state *, int);
 bool is_int(int, char**);
 int get_num(int, char**, int, const char*);
 void start_program(ifstream&, int);
@@ -39,3 +46,4 @@ void sorted_population(state*, int);
 void sorted_name(state*, int);
 void income(state*, int);
 void house(state*, int);
+void again();
